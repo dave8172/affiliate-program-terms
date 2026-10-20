@@ -30,7 +30,8 @@ Of the {{FREE}} programs listed here:
 - **{{RECURRING}} pay recurring commission, {{ONETIME}} pay once, and {{RECUNKNOWN}} don't say which.**
 
 Knowing who is silent is worth as much as knowing who pays. The headline
-percentage is the least useful number in the deal: 20% recurring beats 50% once.
+percentage is the least useful number in the deal: 50% once beats 20% recurring
+until the customer's third payment.
 
 ## The programs
 
