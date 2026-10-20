@@ -30,9 +30,10 @@ Of the {{FREE}} programs listed here:
 - **{{RECURRING}} pay recurring commission, {{ONETIME}} pay once, and {{RECUNKNOWN}} don't say which.**
 
 Knowing who is silent is worth as much as knowing who pays. The headline
-percentage is the least useful number in the deal. Whether recurring pays more
-than a one-time commission depends on how long the customer keeps paying: at 20%
-recurring against 50% once, recurring pulls ahead at the third payment.
+percentage is the least useful number in the deal. Whether recurring beats a
+one-time commission depends on how long the program pays it, and how long the
+customers you refer stay subscribed: 20% recurring overtakes 50% once at its
+third commission payment.
 
 ## The programs
 
