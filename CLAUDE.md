@@ -7,6 +7,10 @@ Public mirror of the free tier of [affiliateprogramterms.com](https://affiliatep
 node generate.mjs        # reads ../affterms/data, rewrites README.md
 ```
 
+**Broken since 2026-10-27:** affterms went fully free and no longer has
+`data/free-tier.json`, so `generate.mjs` stops with an error when it reads that file.
+Decide what this mirror should publish before fixing it.
+
 ## The one rule
 
 **Only free-tier records may appear here.** The tier is resolved from
