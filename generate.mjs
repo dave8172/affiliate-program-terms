@@ -1,9 +1,7 @@
 // Regenerate README.md from the affterms dataset.
 //
-// This repo mirrors the free tier of https://affiliateprogramterms.com and only
-// the free tier. The free-tier rule is read from the source data rather than
-// restated here, so the two cannot drift apart and no record can be published
-// by accident.
+// This repo mirrors the whole directory of https://affiliateprogramterms.com,
+// which has been free to read under CC BY 4.0 since 2026-10-27 (no free tier any more).
 //
 //   node generate.mjs            reads ../affterms/data, writes README.md
 
@@ -13,13 +11,8 @@ const SRC = process.env.AFFTERMS_DATA || '../affterms/data';
 const SITE = 'https://affiliateprogramterms.com';
 
 const rows = JSON.parse(readFileSync(`${SRC}/programs.json`, 'utf8'));
-const tier = JSON.parse(readFileSync(`${SRC}/free-tier.json`, 'utf8'));
-
-const byslug = new Map(rows.map(r => [r.slug, r]));
-// A hard cap since 2026-09-15 (it had been a share of the directory). Read, never restated.
-const n = tier.cap;
-if (!Number.isInteger(n) || n < 1) throw new Error(`free-tier.json has no usable cap: ${tier.cap}`);
-const free = tier.order.filter(s => byslug.has(s)).slice(0, n).map(s => byslug.get(s));
+// Every record, by name. (`free` keeps its old name: the whole set is free now.)
+const free = [...rows].sort((a, b) => String(a.name).localeCompare(String(b.name)));
 
 const esc = s => String(s ?? '').replace(/\|/g, '\\|').replace(/\n+/g, ' ').trim();
 // "not stated" is a finding, not a gap — the site says so and so must this.
@@ -56,7 +49,6 @@ const md = readFileSync('README.template.md', 'utf8')
   .replaceAll('{{TABLE}}', table)
   .replaceAll('{{FREE}}', String(free.length))
   .replaceAll('{{TOTAL}}', String(rows.length))
-  .replaceAll('{{PAID}}', String(rows.length - free.length))
   .replaceAll('{{RECURRING}}', String(stat.recurring))
   .replaceAll('{{ONETIME}}', String(stat.onetime))
   .replaceAll('{{RECUNKNOWN}}', String(stat.recUnknown))
@@ -67,7 +59,7 @@ const md = readFileSync('README.template.md', 'utf8')
   .replaceAll('{{NEWEST}}', checked[checked.length - 1]);
 
 writeFileSync('README.md', md);
-console.log(`README.md written — ${free.length} free of ${rows.length}, checked ${checked[0]}..${checked[checked.length - 1]}`);
+console.log(`README.md written — ${free.length} programs, checked ${checked[0]}..${checked[checked.length - 1]}`);
 
 // The same free set as a CSV, for dataset hosts (Kaggle, Hugging Face). Column
 // names are the dataset's own field names; an empty cell means the vendor does

@@ -4,7 +4,7 @@ Commission rate, recurring or one-time, cookie window, payout minimum and payout
 method for **{{TOTAL}} developer and SaaS affiliate programs**. Every field carries the
 URL it was read from and the date it was checked.
 
-**{{FREE}} of them are below, in full.** The other {{PAID}} are in a file at
+**All of them are below, in full**, and on
 [affiliateprogramterms.com](https://affiliateprogramterms.com).
 
 ## Why this exists
@@ -20,7 +20,7 @@ over from somebody's blog post. A field that can't be verified is published as
 
 ## "Not stated" is a finding
 
-Of the {{FREE}} programs listed here:
+Of the {{TOTAL}} programs listed here:
 
 - **{{NOPAYOUT}} don't publish a payout minimum.** You find out what it is after you've
   earned commission you may not be able to withdraw.
@@ -61,5 +61,5 @@ them.** Listing is free and is never sold.
 ---
 
 *This README is generated from the dataset, including every count above, so the
-numbers can't drift from the records they describe. Data published free to read;
-not relicensed for redistribution.*
+numbers can't drift from the records they describe. Data licensed
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): credit affiliateprogramterms.com.*
